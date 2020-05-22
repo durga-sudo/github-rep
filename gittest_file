@@ -1,2 +1,5 @@
 this its first git repo test
-added new line on Thursday:May|20
+<<<<<<< HEAD
+=======
+added new line on Thursday|May|20
+>>>>>>> origin/master
