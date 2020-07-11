@@ -1,0 +1,19 @@
+FROM nginx:alpine as builder
+ 
+#
+LABEL maintainer="someone@xyz.xyz"
+
+# Update the image ito the latest packages
+WORKDIR '/app/'
+
+RUN apk add --update redis
+
+COPY ./hello.java . 
+
+VOLUME /System/Volumes/Data /data 
+# Expose port 80
+EXPOSE 80
+ 
+#
+# Last is the actual command to start up NGINX within our Container
+CMD ["redis-server"]
